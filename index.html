@@ -60,6 +60,12 @@
           <div class="cta-row">
             <a class="cta primary" href="#posse">Enter the posse tape</a>
             <a class="cta ghost" href="#message">Read the note</a>
+            <button type="button" class="cta music" id="music-btn" aria-pressed="false">
+              <span class="music-eq" id="music-eq" aria-hidden="true">
+                <i></i><i></i><i></i><i></i>
+              </span>
+              <span id="music-label">Play Squires mixtape</span>
+            </button>
           </div>
         </div>
       </section>
@@ -176,17 +182,20 @@
         <button type="button" class="blast" id="blast-btn">
           Press play — birthday blast
         </button>
-        <p class="toast-hint">Hit it for confetti, chrome, and a little posse energy.</p>
+        <p class="toast-hint">
+          Hit it for confetti, chrome, and the Squires Lea mixtape.
+        </p>
       </section>
     </main>
 
     <footer class="footer">
       <p>Made for Sean aka SOB · Age 54 · Squires Lea forever</p>
-      <p class="footer-sub">Hosted with love · Press play anytime</p>
+      <p class="footer-sub">Hosted with love · Original synthwave mixtape in the browser</p>
     </footer>
 
     <canvas id="confetti" aria-hidden="true"></canvas>
     <script src="script.js"></script>
+    <script src="music.js"></script>
   </body>
 </html>
 
