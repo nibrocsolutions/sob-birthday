@@ -204,6 +204,42 @@ a {
   animation-delay: -4s;
 }
 
+.checker {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: min(28vw, 220px);
+  height: 100%;
+  opacity: 0.12;
+  background:
+    linear-gradient(45deg, #ffe14a 25%, transparent 25%),
+    linear-gradient(-45deg, #ffe14a 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #ffe14a 75%),
+    linear-gradient(-45deg, transparent 75%, #ffe14a 75%);
+  background-size: 28px 28px;
+  background-position: 0 0, 0 14px, 14px -14px, -14px 0;
+  mask-image: linear-gradient(to left, black, transparent);
+}
+
+.hero-cassette {
+  position: absolute;
+  right: 4%;
+  top: 18%;
+  width: min(28vw, 210px);
+  opacity: 0.9;
+  animation: floaty 5s ease-in-out infinite;
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.45));
+}
+
+.hero-bmx {
+  position: absolute;
+  right: 8%;
+  bottom: 26%;
+  width: min(24vw, 170px);
+  opacity: 0.85;
+  animation: floaty 6.5s ease-in-out infinite reverse;
+}
+
 .hero-copy {
   position: relative;
   z-index: 2;
@@ -523,6 +559,212 @@ a {
   line-height: 1.55;
 }
 
+.session-with-art {
+  display: grid;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.deck-art,
+.bmx-art {
+  width: min(100%, 160px);
+  justify-self: start;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.35));
+}
+
+.bmx-art {
+  width: min(100%, 220px);
+}
+
+.tape-links {
+  margin-top: 1.75rem;
+  display: grid;
+  gap: 0.75rem;
+  max-width: 36rem;
+}
+
+.tape-links-label {
+  margin: 0;
+  color: var(--hazard);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+.tape-link {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.9rem;
+  align-items: center;
+  padding: 0.85rem 0;
+  border-top: 1px solid rgba(36, 240, 255, 0.25);
+  color: var(--chrome);
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.tape-link:hover,
+.tape-link:focus-visible {
+  color: var(--cyan);
+  transform: translateX(4px);
+}
+
+.tape-link-num {
+  font-family: var(--font-display);
+  color: var(--magenta);
+  font-size: 1.1rem;
+}
+
+.tape-link strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  letter-spacing: 0.03em;
+}
+
+.tape-link em {
+  display: block;
+  margin-top: 0.2rem;
+  font-style: normal;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.video-row {
+  margin-top: 1.75rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.video-frame {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  aspect-ratio: 16 / 9;
+  border: 2px solid rgba(36, 240, 255, 0.35);
+  background: #050508;
+  box-shadow: 0 0 0 1px rgba(255, 42, 122, 0.2);
+}
+
+.video-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.mixtape {
+  max-width: 900px;
+}
+
+.deck {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.deck-face {
+  width: min(100%, 320px);
+}
+
+.deck-svg {
+  width: 100%;
+  height: auto;
+  animation: floaty 7s ease-in-out infinite;
+}
+
+.now-playing {
+  margin: 0;
+  color: var(--cyan);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.tracklist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.tracklist button {
+  width: 100%;
+  appearance: none;
+  display: grid;
+  grid-template-columns: 3rem 1fr;
+  gap: 0.85rem;
+  align-items: center;
+  text-align: left;
+  padding: 0.85rem 0.25rem;
+  border: 0;
+  border-top: 1px solid rgba(232, 238, 247, 0.12);
+  background: transparent;
+  color: var(--chrome);
+  cursor: pointer;
+  font-family: var(--font-mono);
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.tracklist button:hover,
+.tracklist button:focus-visible {
+  color: var(--hazard);
+  transform: translateX(3px);
+}
+
+.tracklist button.is-active {
+  color: var(--cyan);
+}
+
+.track-num {
+  font-family: var(--font-display);
+  color: var(--magenta);
+  font-size: 0.95rem;
+}
+
+.tracklist button.is-active .track-num {
+  color: var(--cyan);
+}
+
+.track-meta strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+}
+
+.track-meta em {
+  display: block;
+  margin-top: 0.2rem;
+  font-style: normal;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.tape-stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 2px solid rgba(255, 42, 122, 0.45);
+  background:
+    linear-gradient(135deg, rgba(36, 240, 255, 0.08), transparent 40%),
+    #050508;
+}
+
+.tape-stage iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.tape-credit {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
 .message {
   display: grid;
   place-items: center;
@@ -767,6 +1009,16 @@ a {
   }
 }
 
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(2deg);
+  }
+}
+
 @media (min-width: 760px) {
   .hero {
     align-items: center;
@@ -801,8 +1053,35 @@ a {
     font-size: 1.05rem;
   }
 
+  .session-with-art {
+    grid-template-columns: 1fr auto;
+  }
+
+  .video-row {
+    grid-template-columns: 1fr 1fr;
+    max-width: 960px;
+  }
+
   .note {
     padding: 2.5rem 2.25rem;
+  }
+}
+
+@media (max-width: 759px) {
+  .hero-cassette,
+  .hero-bmx {
+    opacity: 0.35;
+  }
+
+  .hero-cassette {
+    width: 120px;
+    top: 12%;
+    right: 2%;
+  }
+
+  .hero-bmx {
+    width: 110px;
+    bottom: 18%;
   }
 }
 
